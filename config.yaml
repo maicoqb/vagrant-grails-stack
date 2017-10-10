@@ -1,0 +1,37 @@
+---
+ip: "192.168.33.10"
+hostname: vagrant-host
+name: vagrant-host
+
+vm:
+  cpus: 1
+  memory: 1024
+
+# Set all ports to be forwarded
+ports:
+  - host: 80
+    guest: 80
+  - host: 8080
+    guest: 8080
+
+# Set all folders to be synced
+folders:
+  - from: Code
+    to: /Code
+
+# Set all files do be copied to guest
+# file-copy:
+#  # Copy to user home to avoid permission denied
+#  - source: path/from/host
+#    destination: path/to/guest
+
+# Set all scripts to be executed on machine on provisioning
+# the order is relevant
+scripts:
+  - scripts/install_java.sh
+  - scripts/install_mongodb.sh
+
+# Set all scripts to be executed on machine always the guest is up
+# the order is relevant
+# script-always:
+#  - scripts/always_execute.sh
