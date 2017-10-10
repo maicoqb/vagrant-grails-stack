@@ -20,10 +20,9 @@ folders:
     to: /Code
 
 # Set all files do be copied to guest
-# file-copy:
-#  # Copy to user home to avoid permission denied
-#  - source: path/from/host
-#    destination: path/to/guest
+file-copy:
+  - source: scripts/mongod.conf
+    destination: /home/vagrant/mongod.conf
 
 # Set all scripts to be executed on machine on provisioning
 # the order is relevant

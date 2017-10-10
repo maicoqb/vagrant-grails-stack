@@ -1,19 +1,23 @@
 #!/bin/bash
-# Update SDKMan dependencies
-# sudo apt-get update && sudo apt-get install -y curl zip unzip
 
-echo "$0 - Installing SDKMan"
+JAVA_VERSION='7u141-zulu'
+GRAILS_VERSION='3.2.2'
+
+# Update SDKMan dependencies
+sudo apt-get update && sudo apt-get install -y curl zip unzip
+
+echo "$0 - Install SDKMan"
 su - vagrant -c 'curl -s "https://get.sdkman.io" | bash'
 
-echo "$0 - Installing Java"
-su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk install java 7u141-zulu'
-su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk default java 7u141-zulu'
+echo "$0 - Install Java"
+su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk install java $JAVA_VERSION'
+su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk default java $JAVA_VERSION'
 
-echo "$0 - Installing Grails"
-su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk install grails 3.2.2'
-su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk default grails 3.2.2'
+echo "$0 - Install Grails"
+su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk install grails $GRAILS_VERSION'
+su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk default grails $GRAILS_VERSION'
 
-echo "$0 - Installing Grails"
+echo "$0 - Set JAVA_HOME"
 cat <<EOF >> /home/vagrant/.bashrc
 
 export JAVA_HOME="\$HOME/.sdkman/candidates/java/current"
