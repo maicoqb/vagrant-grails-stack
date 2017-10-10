@@ -11,3 +11,4 @@ m 2.6.11
 
 rm -rf /home/vagrant/mongodb
 mkdir -p /home/vagrant/mongodb
+chown vagrant:vagrant /home/vagrant/mongodb

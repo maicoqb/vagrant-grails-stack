@@ -5,7 +5,7 @@ name: vagrant-host
 
 vm:
   cpus: 1
-  memory: 1024
+  memory: 2048
 
 # Set all ports to be forwarded
 ports:
