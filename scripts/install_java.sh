@@ -13,9 +13,10 @@ echo "$0 - Installing Grails"
 su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk install grails 3.2.2'
 su - vagrant -c 'source "/home/vagrant/.sdkman/bin/sdkman-init.sh" && sdk default grails 3.2.2'
 
+echo "$0 - Installing Grails"
 cat <<EOF >> /home/vagrant/.bashrc
 
-export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-export PATH="$JAVA_HOME/bin:$PATH"
+export JAVA_HOME="\$HOME/.sdkman/candidates/java/current"
+export PATH="\$JAVA_HOME/bin:\$PATH"
 
 EOF
