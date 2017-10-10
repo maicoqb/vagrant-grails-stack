@@ -33,5 +33,5 @@ scripts:
 
 # Set all scripts to be executed on machine always the guest is up
 # the order is relevant
-# script-always:
-#  - scripts/always_execute.sh
+script-always:
+  - scripts/start_mongodb.sh
